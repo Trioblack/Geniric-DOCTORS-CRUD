@@ -1,0 +1,93 @@
+/*
+ * File Name: EditWardEditFileGrid.css
+ * Creation Date: 2013-01-29.17:27:38
+ * This file is responsible for flat screen display for function: EditWardEditFileGrid
+ */
+
+/*
+ * Type: Constant  ::  Name: Hospital Code
+ */
+.EditWardEditFileGrid_Hospital_Code
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 10px 0px 0px 6px;
+}
+
+/*
+ * Field:  - hospital_code;
+ */
+.EditWardEditFileGrid_hospital_code
+{
+	position: absolute;
+	top: 0px;
+	left: 220px;
+	width: 84px;
+	background-color: #F1F1F1;
+	margin: 5px 5px 0px 5px;
+	text-transform: uppercase;
+}
+
+/*
+ * Type: Constant  ::  Name: Hospital Name
+ */
+.EditWardEditFileGrid_Hospital_Name
+{
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	margin: 10px 0px 0px 6px;
+}
+
+/*
+ * Field:  - hospital_name;
+ */
+.EditWardEditFileGrid_hospital_name
+{
+	position: absolute;
+	top: 30px;
+	left: 220px;
+	width: 200px;
+	background-color: #F1F1F1;
+	margin: 5px 5px 0px 5px;
+}
+/*
+ * Style for fieldset
+ */
+.EditWardEditFileGrid_GroupHeader
+{
+	height: 75px;
+	position: relative;
+}
+/*
+ * Style for Flat Button Panel
+ */
+#buttonPanel
+{
+	font-weight:bold;
+	width: auto;
+	margin-left: 80px;
+}
+/*
+ * Field:  - ward_code;
+ */
+.EditWardEditFileGrid_ward_code
+{
+	width: 84px;
+	text-align: left;
+	text-transform: uppercase;
+}
+/*
+ * Field:  - ward_name;
+ */
+.EditWardEditFileGrid_ward_name
+{
+	width: 225px;
+	text-align: left;
+}
+#buttonPanel2 {
+    bottom: 54px;
+    left: 5px;
+    position: relative;
+}

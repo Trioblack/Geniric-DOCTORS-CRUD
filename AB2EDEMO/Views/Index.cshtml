@@ -1,0 +1,44 @@
+@{
+    if (TempData["error"]==null&&TempData["cancelSelect"] == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+<!-- Client Area -->
+<div class="loginFormContainer">
+    @*@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { id = "login", name = "login" }))*@
+    @using (Ajax.BeginForm("Index", "Login", new AjaxOptions { OnBegin = "gifLoad()", OnComplete = "gifUnload()", UpdateTargetId = "PageContent" }, new { id = "login", name = "login" }))
+    {
+        <input type="hidden" name="login" value="login" />
+        if (TempData["error"] != null)
+        {<div id="messagePanel" class="messagePanel_loginPage">@TempData["error"].ToString().TrimEnd()</div>}
+        <div>
+            <label class="leftAlign">
+                User Name</label><input id="userId" type="text" name="login:userId" class="rightAlign"
+                    maxlength="15" size="33" />
+        </div>
+        <div>
+            <label class="leftAlign">
+                Password</label><input id="password" type="password" name="login:password" value=""
+                    maxlength="15" size="33" class="rightAlign" />
+        </div>
+        <div>
+            <input id="login:submit" type="submit" name="login:submit" value="Sign In" class="submit_loginPage rightAlign buttons" />
+        </div>
+        <div>
+            <p align="center">
+                Thank you for choosing X-Redo.</p>
+        </div>
+    }
+</div>
+@{
+    if (TempData["cancelSelect"] != null)
+    {
+        <script type="text/javascript">
+$(document).ready(function() {
+    appendHeaderInfo("index");
+})
+</script>
+    }
+}

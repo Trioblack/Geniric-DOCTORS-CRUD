@@ -1,0 +1,140 @@
+/*
+ * File Name: DspWardsPerHospital2DisplayFileGrid.css
+ * Creation Date: 2013-01-11.11:55:27
+ * This file is responsible for flat screen display for function: DspWardsPerHospital2DisplayFileGrid
+ */
+
+/*
+ * Type: Constant  ::  Name: Country
+ */
+.DspWardsPerHospital2DisplayFileGrid_Country
+{
+	position: absolute;
+	top: 30px;
+	left: 35px;
+	margin: 10px 0px 0px 6px;
+}
+
+/*
+ * Field:  - country;
+ */
+.DspWardsPerHospital2DisplayFileGrid_country
+{
+	position: absolute;
+	top: 30px;
+	left: 115px;
+	width: 42px;
+	background-color: #F1F1F1;
+	margin: 5px 5px 0px 5px;
+	text-transform: uppercase;
+}
+
+/*
+ * Field:  - country_name;
+ */
+.DspWardsPerHospital2DisplayFileGrid_country_name
+{
+	position: absolute;
+	top: 30px;
+	left: 170px;
+	width: 160px;
+	background-color: #F1F1F1;
+	margin: 5px 5px 0px 5px;
+}
+
+/*
+ * Type: Constant  ::  Name: Hospital Name
+ */
+.DspWardsPerHospital2DisplayFileGrid_Hospital_Name
+{
+	position: absolute;
+	top: 60px;
+	left: 35px;
+	margin: 10px 0px 0px 6px;
+}
+
+/*
+ * Field:  - hospital_name;
+ */
+.DspWardsPerHospital2DisplayFileGrid_hospital_name
+{
+	position: absolute;
+	top: 60px;
+	left: 175px;
+	width: 200px;
+	background-color: #F1F1F1;
+	margin: 5px 5px 0px 5px;
+}
+
+/*
+ * Type: Constant  ::  Name: Telephone Number
+ */
+.DspWardsPerHospital2DisplayFileGrid_Telephone_Number
+{
+	position: absolute;
+	top: 90px;
+	left: 35px;
+	margin: 10px 0px 0px 6px;
+}
+
+/*
+ * Field:  - telephone_number;
+ */
+.DspWardsPerHospital2DisplayFileGrid_telephone_number
+{
+	position: absolute;
+	top: 90px;
+	left: 205px;
+	width: 120px;
+	background-color: #F1F1F1;
+	margin: 5px 5px 0px 5px;
+}
+/*
+ * Style for fieldset
+ */
+.DspWardsPerHospital2DisplayFileGrid_GroupHeader
+{
+	height: 95px;
+}
+/*
+ * Style for Flat Button Panel
+ */
+#buttonPanel
+{
+    font-weight: bold;
+    margin-left: 80px;
+    width: auto;
+}
+/*
+ * Field:  - ward_code;
+ */
+.DspWardsPerHospital2DisplayFileGrid_ward_code
+{
+	width: 84px;
+	text-align: left;
+	/*padding: 2px 3px 0px 3px;*/
+	text-transform: uppercase;
+}
+/*
+ * Field:  - ward_name;
+ */
+.DspWardsPerHospital2DisplayFileGrid_ward_name
+{
+	width: 225px;
+	text-align: left;
+	/*padding: 2px 3px 0px 3px;*/
+}
+/*
+ * Field:  - patient_count;
+ */
+.DspWardsPerHospital2DisplayFileGrid_patient_count
+{
+	width: 45px;
+	text-align: right;
+	/*padding: 2px 3px 0px 3px;*/
+}
+#buttonPanel2 {
+    bottom: 54px;
+    left: 5px;
+    position: relative;
+}

@@ -1,0 +1,131 @@
+/*
+ * File Name: DspAllHospitalsDisplayFileGrid.css
+ * Creation Date: 2013-01-11.11:54:50
+ * This file is responsible for flat screen display for function: DspAllHospitalsDisplayFileGrid
+ */
+
+/*
+ * Type: Constant  ::  Name: Country
+ */
+.DspAllHospitalsDisplayFileGrid_Country_1
+{
+	position: absolute;
+	top: 30px;
+	left: 25px;
+	margin: 10px 0px 0px 6px;
+}
+
+/*
+ * Field:  - ctl_country;
+ */
+.DspAllHospitalsDisplayFileGrid_ctl_country
+{
+	position: absolute;
+	top: 30px;
+	left: 165px;
+	width: 42px;
+	margin: 5px 5px 0px 5px;
+	text-transform: uppercase;
+}
+
+/*
+ * Field:  - country_namehdr;
+ */
+.DspAllHospitalsDisplayFileGrid_country_namehdr
+{
+	position: absolute;
+	top: 30px;
+	left: 215px;
+	width: 160px;
+	background-color: #F1F1F1;
+	margin: 5px 5px 0px 5px;
+}
+
+/*
+ * Type: Constant  ::  Name: Hospital Name
+ */
+.DspAllHospitalsDisplayFileGrid_Hospital_Name_3
+{
+	position: absolute;
+	top: 60px;
+	left: 25px;
+	margin: 10px 0px 0px 6px;
+}
+
+/*
+ * Field:  - ctl_hospital_name;
+ */
+.DspAllHospitalsDisplayFileGrid_ctl_hospital_name
+{
+	position: absolute;
+	top: 60px;
+	left: 165px;
+	width: 200px;
+	margin: 5px 5px 0px 5px;
+}
+/*
+ * Style for fieldset
+ */
+.DspAllHospitalsDisplayFileGrid_GroupHeader
+{
+	height: 65px;
+}
+/*
+ * Style for Flat Button Panel
+ */
+#buttonPanel
+{
+	font-weight: bold;
+    margin-left: 80px;
+    width: auto;
+}
+/*
+ * Field:  - country_name;
+ */
+.DspAllHospitalsDisplayFileGrid_country_name
+{
+	width: 180px;
+	text-align: left;
+    text-transform: uppercase;
+}
+/*
+ * Field:  - hospital_name;
+ */
+.DspAllHospitalsDisplayFileGrid_hospital_name
+{
+	width: 225px;
+	text-align: left;
+	/*padding: 2px 3px 0px 3px;*/
+}
+/*
+ * Field:  - number_of_wards;
+ */
+.DspAllHospitalsDisplayFileGrid_number_of_wards
+{
+	width: 45px;
+	text-align: right;
+	/*padding: 2px 3px 0px 3px;*/
+}
+/*
+ * Field:  - number_5;
+ */
+.DspAllHospitalsDisplayFileGrid_number_5
+{
+	width: 45px;
+	text-align: right;
+	/*padding: 2px 3px 0px 3px;*/
+}
+.DspAllHospitalsDisplayFileGrid_acagst
+{
+	position: relative;
+	top: 120px;
+	left: 26px;
+	width: 108px;
+	text-align: left;
+}
+  
+#buttonPanel2 {
+    bottom: 54px;
+    left: 5px;
+    position: relative;
+}

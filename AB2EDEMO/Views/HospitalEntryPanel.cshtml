@@ -1,0 +1,106 @@
+﻿@model AB2EDEMO.Models.Hospital
+@{if(TempData["errorElement"]!=null){
+      <script type="text/javascript">
+          $(document).ready(function () {
+              addDatePicker();
+              var temp = $("#errorElement").text().trim();
+              var arr = temp.split(" ");
+              $.each(arr, function (index, value) {
+                  var temp2 = ".ErEditHospitalChangeEditRecord1ScreenPanel_" + value.toLowerCase() + "_txt";
+                  $(temp2).addClass("input-validation-error");
+              });
+              $(".input-validation-error:first").focus();
+          });
+      </script>
+    }
+}
+@{if(TempData["redir"].ToString() == "Edit"){
+       <script type="text/javascript">
+           $(document).ready(function () {
+               $(".ErEditHospitalChangeEditRecord1ScreenPanel_hospital_code_txt").attr('readonly', 'readonly');
+               $(".ErEditHospitalChangeEditRecord1ScreenPanel_hospital_code_txt").addClass(' readonlyinp');
+           });
+      </script>
+  }
+}
+<script src="../Scripts/Utils.js" type="text/javascript"></script>
+<link href="../Content/themes/base/ErEditHospitalChangeEditRecord1ScreenPanel.css" rel="stylesheet" type="text/css" />
+<div id="SelectedOption">@TempData["redir"].ToString()</div>
+<div id="HospitalEntryPanel" class="clientArea">
+
+    @using (Ajax.BeginForm("Save", "Hospital", new AjaxOptions { InsertionMode = InsertionMode.Replace, OnBegin = "gifLoad()", OnComplete = "gifUnload()", UpdateTargetId = "PageContent" }, new { id = "HospitalEntryPanel", name = "HospitalEntryPanel" }))
+    {
+        <h1 class="groupHeader">
+            <label class="groupHeaderText">
+                Change Hospital Dtails</label>
+        </h1>
+        <div id="messagePanel" @*style="display: none;"*@>
+            <div class="clientMessages">
+            <div id="errorElement" style="display:none;">
+            @TempData["errorElement"]
+            
+            </div>
+            </div>
+            <div id="updt:errMsg">@MvcHtmlString.Create(Html.Encode(TempData["message"])
+    .Replace(Environment.NewLine, "<br />"))</div>
+        </div>    
+	
+        <div class="flatContainer">
+            <fieldset class="ErEditHospitalChangeEditRecord1ScreenPanel_GroupHeader">
+                <legend></legend>
+                <div style="color: #0000FF; font-weight: bold; padding-left: 10px;">@TempData["Result"]</div>
+                @Html.LabelFor(model => model.Hospital_Code, new { id = "updt:HospitalEntryPanel_Hospital_Code", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Hospital_Code" })
+                @Html.TextBoxFor(model => model.Hospital_Code, new { id = "updt:hospital_code", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_hospital_code_txt", title = "ACADCD", tabindex = "1", maxlength = "6", name = "updt:hospital_code" })
+                @Html.LabelFor(model => model.Hospital_Name, new { id = "updt:HospitalEntryPanel_Hospital_Name", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Hospital_Name" })
+                @Html.TextBoxFor(model => model.Hospital_Name, new { id = "updt:hospital_name", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_hospital_name_txt", title = "ACAETX", tabindex = "2", maxlength = "25", name = "updt:hospital_name" })
+                @Html.LabelFor(model => model.Address_Street, new { id = "updt:HospitalEntryPanel_Street_Address", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Street_Address" })
+                @Html.TextBoxFor(model => model.Address_Street, new { id = "updt:address_street", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_address_street_txt", title = "ACAFTX", tabindex = "3", maxlength = "25", name = "updt:address_street" })
+                @Html.LabelFor(model => model.Address_Town, new { id = "updt:HospitalEntryPanel_Town", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Town" })
+                @Html.TextBoxFor(model => model.Address_Town, new { id = "updt:address_town", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_address_town_txt", title = "ACAGTX", tabindex = "4", maxlength = "25", name = "updt:address_town" })
+                @Html.LabelFor(model => model.Address_Province, new { id = "updt:HospitalEntryPanel_Address_Province", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_State_Prov_Count" })
+                @Html.TextBoxFor(model => model.Address_Province, new { id = "updt:address_province", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_address_province_txt", title = "ACAHTX", tabindex = "5", maxlength = "25", name = "updt:address_province" })
+                @Html.LabelFor(model => model.Address_Post_Zip, new { id = "updt:HospitalEntryPanel_Address_Post_Zip", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Postal_or_Zip_Code" })
+                @Html.TextBoxFor(model => model.Address_Post_Zip, new { id = "updt:address_post_zip", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_address_post_zip_txt", title = "ACAJTX", tabindex = "6", maxlength = "8", name = "updt:address_post_zip" })
+                @Html.LabelFor(model => model.Country, new { id = "updt:HospitalEntryPanel_Country", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Country" })
+                @Html.DropDownListFor(model => model.Country, new SelectList(ViewBag.countrylist, "Value", "Text", Model.Country), new { id = "updt:country", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_country_txt", title = "ACAGST", tabindex = "7", name = "updt:country" })
+                @*@Html.TextBoxFor(model => model.country, new { id = "updt:country", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_country_txt", title = "XWJUN0", tabindex = "7", maxlength = "15", name = "updt:country" })*@
+                @*@Html.TextBox("updt:country_name", "", new { id = "updt:country_name", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_country_name_txt", type = "text", @readonly = "readonly", title = "ACAGST", tabindex = "-1", style = "", maxlength = "34", name = "updt:country_name" })*@
+                @Html.LabelFor(model => model.Telephone_Number, new { id = "updt:HospitalEntryPanel_Telephone_Number", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Telephone_Number" })
+                @Html.TextBoxFor(model => model.Telephone_Number, new { id = "updt:telephone_number", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_telephone_number_txt", title = "ACABNB", tabindex = "8", maxlength = "15", name = "updt:telephone_number" })
+                @Html.LabelFor(model => model.Fax_Number, new { id = "updt:HospitalEntryPanel_Fax_Number", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_Fax_Number" })
+                @Html.TextBoxFor(model => model.Fax_Number, new { id = "updt:fax_number", @class = "ErEditHospitalChangeEditRecord1ScreenPanel_fax_number_txt", title = "ACACNB", tabindex = "9", maxlength = "15", name = "updt:fax_number" })
+            </fieldset>
+        </div>
+        <div id="buttonPanel">
+            <input type="submit" value="Wards" id="Wards" name="Wards" class="buttons"/>
+            <input type="submit" value="Delete" id="Delete" name="Delete" class="buttons"/>
+            <input type="hidden" id="test" class="test" name ="@TempData["redir"].ToString()" />
+            <input type="submit" value="Submit" id="Save" name="Save" class="buttons" />
+        </div>
+		
+    }
+    @using (Ajax.BeginForm("Cancel", "Utils", new AjaxOptions { InsertionMode = InsertionMode.Replace, OnBegin = "gifLoad()", OnComplete = "gifUnload()", UpdateTargetId = "PageContent" }))
+    { 
+        <div id="buttonPanel2">
+            <input type="submit" value="Cancel" id="Cancel" name="Cancel" class="buttons" />
+            <input type="hidden" value="Cancel" />
+        </div>
+    }
+</div>
+<div>
+    <div id="popup" style="width: 100%; height: 100%; top: 0px; position: absolute;
+        margin: 0px; background-color: #000; opacity: 0.1; filter: alpha(opacity=30);
+        z-index: 602; display: none">
+    </div>
+    <div  id="popupdata">
+    </div>
+</div>
+<script type="text/javascript" language="javascript" >
+    /// <summary>
+    ///   Method to apply readonly properties for input fields in display and delete mode.
+    /// </summary>
+    function readonlyFields() {
+        $('input[type="text"],select').attr('readonly', 'readonly');
+        $('input[type="text"],select').addClass(' readonlyinp');
+    }
+</script>

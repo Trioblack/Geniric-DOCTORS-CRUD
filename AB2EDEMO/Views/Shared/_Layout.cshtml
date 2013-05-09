@@ -1,0 +1,39 @@
+@{
+    ViewBag.Title = "Display detail per Hospital :-" + ViewBag.Title;
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>X-Redo Login Page</title>
+    <script src="../../Scripts/jquery-1.8.2.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.ui.core.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.ui.widget.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.ui.datepicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/Utils.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.validate.js" type="text/javascript"></script>
+    <link href="../../Content/themes/base/XWDFT.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="pagebody" class="inner">
+    <div id="ExternalDiv">
+        &nbsp;</div>
+    <div id="InternalDiv">
+    </div>
+    <div class="page-width">
+        <div id="header">
+            <div id="outer">
+                <div class="companysiteLinkContainer">
+                    <a id="companysite" target="_blank" href="http://www.databorough.com" onclick="alert($('title').html());">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="columns-holder">
+            <div id="PageContent">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

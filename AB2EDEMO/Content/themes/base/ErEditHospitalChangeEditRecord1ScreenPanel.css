@@ -1,0 +1,260 @@
+/*
+ * File Name: ErEditHospitalChangeEditRecord1ScreenPanel.css
+ * Creation Date: 2013-01-11.11:56:49
+ * This file is responsible for flat screen display for function: ErEditHospitalChangeEditRecord1ScreenPanel
+ */
+
+/*
+ * Type: Constant  ::  Name: Hospital Code
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Hospital_Code
+{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+/*
+ * Field:  - hospital_code;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_hospital_code_txt
+{
+	position: absolute;
+	top: 30px;
+	left: 330px;
+	width: 84px;
+	text-align: left;
+	background-color: #F1F1F1;
+}
+
+/*
+ * Type: Constant  ::  Name: Hospital Name
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Hospital_Name
+{
+	position: absolute;
+	top: 90px;
+	left: 30px;
+}
+
+/*
+ * Field:  - hospital_name;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_hospital_name_txt
+{
+	position: absolute;
+	top: 90px;
+	left: 330px;
+	width: 200px;
+	text-align: left;
+}
+
+/*
+ * Type: Constant  ::  Name: Street Address
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Street_Address
+{
+	position: absolute;
+	top: 120px;
+	left: 30px;
+}
+
+/*
+ * Field:  - address_street;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_address_street_txt
+{
+	position: absolute;
+	top: 120px;
+	left: 330px;
+	width: 200px;
+	text-align: left;
+}
+
+/*
+ * Type: Constant  ::  Name: Town
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Town
+{
+	position: absolute;
+	top: 150px;
+	left: 30px;
+}
+
+/*
+ * Field:  - address_town;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_address_town_txt
+{
+	position: absolute;
+	top: 150px;
+	left: 330px;
+	width: 200px;
+	text-align: left;
+}
+
+/*
+ * Type: Constant  ::  Name: State/Prov/Count
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_State_Prov_Count
+{
+	position: absolute;
+	top: 180px;
+	left: 30px;
+}
+
+/*
+ * Field:  - address_province;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_address_province_txt
+{
+	position: absolute;
+	top: 180px;
+	left: 330px;
+	width: 200px;
+	text-align: left;
+}
+
+/*
+ * Type: Constant  ::  Name: Postal or Zip Code
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Postal_or_Zip_Code
+{
+	position: absolute;
+	top: 210px;
+	left: 30px;
+}
+
+/*
+ * Field:  - address_post_zip;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_address_post_zip_txt
+{
+	position: absolute;
+	top: 210px;
+	left: 330px;
+	width: 64px;
+	text-align: left;
+}
+
+/*
+ * Type: Constant  ::  Name: Country
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Country
+{
+	position: absolute;
+	top: 240px;
+	left: 30px;
+}
+
+/*
+ * Field:  - country;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_country_txt
+{
+	position: absolute;
+	top: 240px;
+	left: 330px;
+	width: 65px;
+}
+
+/*
+ * Field:  - country_name;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_country_name_txt
+{
+	position: absolute;
+	top: 240px;
+	left: 410px;
+	width: 160px;
+	text-align: left;
+	background-color: #F1F1F1;
+}
+
+/*
+ * Type: Constant  ::  Name: Telephone Number
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Telephone_Number
+{
+	position: absolute;
+	top: 270px;
+	left: 30px;
+}
+
+/*
+ * Field:  - telephone_number;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_telephone_number_txt
+{
+	position: absolute;
+	top: 270px;
+	left: 330px;
+	width: 120px;
+	text-align: right;
+	/*padding: 2px 2px 0;*/
+}
+
+/*
+ * Type: Constant  ::  Name: Fax Number
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_Fax_Number
+{
+	position: absolute;
+	top: 300px;
+	left: 30px;
+}
+
+/*
+ * Field:  - fax_number;
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_fax_number_txt
+{
+	position: absolute;
+	top: 300px;
+	left: 330px;
+	width: 120px;
+	text-align: right;
+	/*padding: 2px 2px 0;*/
+}
+/*
+ * Style for fieldset
+ */
+.ErEditHospitalChangeEditRecord1ScreenPanel_GroupHeader
+{
+	height: 355px;
+    position: relative;
+}
+/*
+ * Style for Flat Button Panel
+ */
+#buttonPanel
+{
+	font-weight: bold;
+    margin-left: 80px;
+    width: auto;
+}
+#form1 {
+    position: absolute;
+}
+#buttonPanel2
+{
+	position:relative;
+	bottom:35px;
+	left:5px;
+	width: 80px;
+}
+#SelectedOption
+{
+	display:none;
+}
+.input-validation-error {
+background-color: #F9F9B6;
+    border: 1px solid #40505D;
+    color: #FF0000;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+}
+.readonlyinp {
+    background-color: #F1F1F1;
+}

@@ -1,0 +1,258 @@
+﻿@using AB2EDEMO.Controllers
+@model IEnumerable<AB2EDEMO.Models.WardsGdo>
+@{
+    Layout = null;
+    if (TempData["postBackError"] != null)
+    {
+    <script type="text/javascript">
+        gifUnload();
+            alert("@TempData["postBackError"].ToString()");
+    </script>
+    }
+}
+@{
+    if (ViewBag.Load01D != null)
+    {
+    <link href="../Content/themes/base/DspWardsPerHospital2DisplayFileGrid.css" rel="stylesheet"
+        type="text/css" />
+    <div class="clientArea" >
+        <div id="updt">
+            <input type="hidden" value="updt" name="updt" tabindex="1" />
+            <h1 class="groupHeader">
+                <label class="groupHeaderText">
+                    Wards for Country/Hospital</label>
+            </h1>
+            <div id="messagePanel" style="">
+                <div class="clientMessages">
+                </div>
+                <div id="updt:errMsg">
+                </div>
+            </div>
+            <div>
+                <fieldset class="DspWardsPerHospital2DisplayFileGrid_GroupHeader">
+                    <legend></legend>
+                    <label class="DspWardsPerHospital2DisplayFileGrid_Country" id="updtGrid:DspWardsPerHospital2DisplayFileGrid_Country">
+                        Country</label>
+                    <select disabled="disabled" title="country" size="1" class="DspWardsPerHospital2DisplayFileGrid_country"
+                        name="updtGrid:country" id="updtGrid:country">
+                        <option>@ViewBag.country</option>
+                    </select>
+                    <input id="updtGrid:country_name" class="DspWardsPerHospital2DisplayFileGrid_country_name" type="text" readonly="readonly" title="country_name" maxlength="20" value="@ViewBag.country" name="updtGrid:country_name" />
+                    <label class="DspWardsPerHospital2DisplayFileGrid_Hospital_Name" id="updtGrid:DspWardsPerHospital2DisplayFileGrid_Hospital_Name">
+                        Hospital Name</label>
+                    <input type="text" readonly="readonly" title="hospital_name" style="" maxlength="25" class="DspWardsPerHospital2DisplayFileGrid_hospital_name" value="@ViewBag.hospitalName"
+                 name="updtGrid:hospital_name" id="updtGrid:hospital_name">
+                    <label class="DspWardsPerHospital2DisplayFileGrid_Telephone_Number" id="updtGrid:DspWardsPerHospital2DisplayFileGrid_Telephone_Number">
+                        Telephone Number</label>
+                    <input type="text" readonly="readonly" title="telephone_number" class="DspWardsPerHospital2DisplayFileGrid_telephone_number" value="@ViewBag.telephoneno" name="updtGrid:telephone_number" id="updtGrid:telephone_number">
+                </fieldset>
+            </div>
+        </div>
+        <div>
+            <div class="clientAreaGrid">
+                @using (Ajax.BeginForm("WardsEntryPanel", "Wards",new {hospitalName=ViewBag.hospitalName,hospitalCode = ViewBag.hospitalcode} ,new AjaxOptions { OnSuccess = "constructor();", OnBegin = "gifLoad()", OnComplete = "gifUnload()", InsertionMode = InsertionMode.Replace, UpdateTargetId = "PageContent" }))
+                {
+            
+            
+                    <div id="gridContainer" class="XWDFTgridContainer">
+                        <table id="updtGrid:grid" class="XWDFTgrid" cellspacing="0" cellpadding="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                    </th>
+                                    <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                        <span title="">@Html.DisplayNameFor(model => model.Ward_Code)</span>
+                                    </th>
+                                    <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                        <span title="">@Html.DisplayNameFor(model => model.Ward_Name)</span>
+                                    </th>
+                                    <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                        <span title="">@Html.DisplayNameFor(model => model.Patient_Count)</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ if (Model.Count() > 0 && (ViewBag.HasMore == true || ViewBag.HasPrevious == true))
+                                   {
+                                    <tr class="XWDFTgridAltData" style="height: 30px;">
+                                        <td>
+                                            <img src="../Content/themes/base/images/filter.gif" id="filterGif" class="filter"
+                                                onclick="$(&quot;Form:first &quot;).submit();" />
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                   }
+                                }
+                                @{
+    
+                                           var gridRow = 1;
+                                           foreach (var item in Model)
+                                           {
+                                               var className = (gridRow % 2) == 0 ? "XWDFTgridAltData" : "XWDFTgridData";
+                                    <tr class="@className">
+                                        <td class="XWDFTrightBottomBorder" align="center" width="16">
+                                            @Html.CheckBox(item.Ward_Code.TrimEnd(), new { id = "updtGrid:grid:2:checked", @class = "chkBox" })
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.ward_code)*@ 
+                                            @Html.Hidden("hospital_code", item.Hospital_Code)                                           
+                                            <input id="updtGrid:grid:0:ward_code" class="DspWardsPerHospital2DisplayFileGrid_ward_code XWDFTgridField ReadOnly" type="text" readonly="readonly" maxlength="11" value="@item.Ward_Code"  name="ward_code" tabindex="2">
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.XWG4TX)*@
+                                            <input id="updtGrid:grid:0:ward_name" class="DspWardsPerHospital2DisplayFileGrid_ward_name XWDFTgridField ReadOnly" type="text" readonly="readonly" maxlength="40" value="@item.Ward_Name" name="ward_name" tabindex="3">
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.XWG4TX)*@
+                                            <input id="updtGrid:grid:0:ward_name" class="DspWardsPerHospital2DisplayFileGrid_ward_name XWDFTgridField ReadOnly" type="text" readonly="readonly" maxlength="40" value="@item.Patient_Count" name="patient_count" tabindex="3">
+                                        </td>
+                                    </tr>
+                                               gridRow++;
+                                           }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="buttonPanel">
+                        @{
+                            if (Model.Count() > 0)
+                            {
+                                <input class="buttons" type="submit" value="Change" name="Change" />
+                                <input type="hidden" name="Change" value="ChangeWard" />
+                                <input class="buttons" type="submit" value="Patient" name="Display" />
+                                <input type="hidden" name="Patient" value="Patient" />
+                            }
+                            else
+                            {
+                                <input class="buttons" type="submit" value="Change" name="Change" disabled="disabled" />
+                                <input type="hidden" name="Change" value="ChangeWard" />
+                                <input class="buttons" type="submit" value="Patient" name="Display" disabled="disabled" />
+                                <input type="hidden" name="Patient" value="Patient" />
+                            }
+                        
+                        }
+                    </div>
+                    <br />
+                }
+                @using (Ajax.BeginForm("Cancel", "Utils", null, new AjaxOptions { InsertionMode = InsertionMode.Replace, OnBegin = "gifLoad()", OnComplete = "gifUnload()", UpdateTargetId = "PageContent" }, new { style = "Position:absolute;" }))
+                { 
+                    <div id="buttonPanel2">
+                        <input type="submit" value="Cancel" id="Cancel" name="Cancel" class="buttons" />
+                        <input type="hidden" value="Cancel" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function constructor() {
+        }
+    </script>
+    }
+    else
+    {
+    <div class="clientAreaGrid">
+        @using (Ajax.BeginForm("WardsEntryPanel", "Wards", new AjaxOptions { OnSuccess = "constructor();", OnBegin = "gifLoad()", OnComplete = "gifUnload()", InsertionMode = InsertionMode.Replace, UpdateTargetId = "PageContent" }))
+        {
+            
+            
+            <div id="gridContainer" class="XWDFTgridContainer">
+                <table id="updtGrid:grid" class="XWDFTgrid" cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                        <tr>
+                            <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                            </th>
+                            <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                <span title="">@Html.DisplayNameFor(model => model.Ward_Code)</span>
+                            </th>
+                            <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                <span title="">@Html.DisplayNameFor(model => model.Ward_Name)</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="XWDFTgridAltData" style="height: 30px;">
+                            <td>
+                                <img src="../Content/themes/base/images/filter.gif" id="filterGif" class="filter"
+                                    onclick="$(&quot;Form:first&quot;).submit();" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        @{
+                                           var gridRow = 1;
+                                           foreach (var item in Model)
+                                           {
+                                               var className = (gridRow % 2) == 0 ? "XWDFTgridAltData" : "XWDFTgridData";
+                                    <tr class="@className">
+                                        <td class="XWDFTrightBottomBorder" align="center" width="16">
+                                            @Html.CheckBox(item.Ward_Code.TrimEnd(), new { id = "updtGrid:grid:2:checked", @class = "chkBox" })
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.ward_code)*@ 
+                                            @Html.Hidden("hospital_code", item.Hospital_Code)                                           
+                                            <input id="updtGrid:grid:0:ward_code" class="DspWardsPerHospital2DisplayFileGrid_ward_code XWDFTgridField ReadOnly" type="text" readonly="readonly" maxlength="11" value="@item.Ward_Code"  name="ward_code" tabindex="2">
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.XWG4TX)*@
+                                            <input id="updtGrid:grid:0:ward_name" class="DspWardsPerHospital2DisplayFileGrid_ward_name XWDFTgridField ReadOnly" type="text" readonly="readonly" maxlength="40" value="@item.Ward_Name" name="ward_name" tabindex="3">
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.XWG4TX)*@
+                                            <input id="updtGrid:grid:0:ward_name" class="DspWardsPerHospital2DisplayFileGrid_ward_name XWDFTgridField ReadOnly" type="text" readonly="readonly" maxlength="40" value="@item.Patient_Count" name="patient_count" tabindex="3">
+                                        </td>
+                                    </tr>
+                                               gridRow++;
+                                           }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="buttonPanel">
+            @{
+                if (Model.Count() > 0)
+                {
+                    <input class="buttons" type="submit" value="Change" name="Change" />
+                    <input type="hidden" name="Change" value="ChangeWard" />
+                    <input class="buttons" type="submit" value="Patient" name="Display" />
+                    <input type="hidden" name="Patient" value="Patient" />
+                }
+                else
+                {
+                    <input class="buttons" type="submit" value="Change" name="Change" disabled="disabled" />
+                    <input type="hidden" name="Change" value="ChangeWard" />
+                    <input class="buttons" type="submit" value="Patient" name="Display" disabled="disabled" />
+                    <input type="hidden" name="Patient" value="Patient" />
+                }
+                        
+             }
+            </div>
+            <br />
+        }
+        @using (Ajax.BeginForm("Cancel", "Utils", null, new AjaxOptions { InsertionMode = InsertionMode.Replace, OnBegin = "gifLoad()", OnComplete = "gifUnload()", UpdateTargetId = "PageContent" }, new { style = "Position:absolute;" }))
+        { 
+            <div id="buttonPanel2">
+                <input type="submit" value="Cancel" id="Cancel" name="Cancel" class="buttons" />
+                <input type="hidden" value="Cancel" />
+            </div>
+        }
+    </div>
+    }
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        appendHeaderInfo("Display detail per Wards");
+    });
+</script>

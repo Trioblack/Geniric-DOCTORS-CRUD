@@ -1,0 +1,1052 @@
+/********************************************************************************/
+/*						Common Proper Ids/Classes of X-Redo						*/
+/********************************************************************************/
+
+/* ---------------- ELEMENT STYLES -------------- */
+
+/**
+ * Style on link on focus.
+ */
+a:focus
+{
+	outline: none;
+}
+
+/**
+ * Style on link on hover.
+ */
+a:hover
+{
+	border: 0px;
+	font-weight: bold;
+}
+
+/**
+ * Style on link when it is active or visited.
+ */
+a:link, a:active, a:visited
+{
+	color: #214D79;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/**
+ * Style on body.
+ */
+body
+{
+	margin: 0px;
+	font: 13px/14px Helvetica;
+	font: 13px/20px Helvetica;
+	background-color: #F5F5F5;
+}
+
+/**
+ * Style for input buttons
+ */
+button, input[type="reset"], input[type="submit"], input[type="button"]
+{
+	font-size: 12px;
+	line-height: 1.2;
+	outline-style: none;
+	outline-width: 0;
+	overflow: visible;
+	padding: 4px 10px 4px;
+	width: auto;
+	color: #214D79;
+}
+
+/**
+ * Style for focus and active on Button, input, select and textarea.
+ */
+button:focus, button:active, input:focus, input:active, select:focus, select:active, textarea:focus, textarea:active 
+{
+	z-index: 1;
+}
+
+/**
+ * Style for fieldset
+ */
+fieldset
+{
+	width: 100%;
+	padding: 0px;
+	display: block;
+	border: none;
+	margin: 5px 0 0 0;
+}
+
+/**
+ * Style of input type.
+ */
+input
+{
+	border: 1px solid #CCCCCC;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+	font-size: 13px;
+	font-family: helvetica;
+	height: 20px;
+	margin: 2px 0 0 5px;
+	/* padding: 2px 0 0 2px; */
+	padding: 4px 0 0 2px;
+	float: left;
+}
+
+/**
+ * Style for the buttons of input type.
+ */
+input.buttons
+{
+	background: transparent url(../../../Content/themes/base/images/sprite.gif) repeat-x scroll 0 -5px;
+	cursor: pointer;
+	font-weight:  bold;
+	height: 25px;
+	margin: 5px 5px 5px 3px;
+	float: none;
+}
+
+/**
+ * Style for the buttons of input type for hover effect.
+ */
+input.buttons:hover
+{
+	background: transparent url(../../../Content/themes/base/images/sprite.gif) repeat-x scroll 0 0;
+	background-position: 0 -1300px;
+	border-style: solid;
+	border-width: 1px;
+	cursor: pointer;
+	height: 25px;
+	margin: 5px 5px 5px 3px;
+}
+
+/**
+ * Style for the Edit-able text fields on Grid.
+ */
+input.Editable
+{
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+}
+
+/**
+ * Style for the filter button.
+ */
+input.filterButton
+{
+	cursor: pointer;
+	margin: 5px 0 5px 0;
+	border: 0px;
+	box-shadow: 0 0 0 transparent;
+}
+
+/**
+ * style for read only text field except flat screen
+ */
+#gridContainer input.ReadOnly
+{
+	background-color: transparent;
+	border: medium none;
+	box-shadow: none;
+}
+
+/**
+ * Style for the columns with Question mark text fields on Grid.
+ */
+input.styleSelector 
+{
+	background-color: #FCF7F0;
+	border: 1px solid #CCCCCC;
+}
+
+/**
+ * Style for the text fields on error.
+ */
+input.XWDFTerrorField
+{
+	background-color: #F08080;
+	color: #FFFFFF;
+	font-size: 10px;
+}
+
+/**
+ * Style on inputText of data table.
+ */
+input.XWDFTgridField
+{
+	box-shadow: 0 0 0 transparent;
+	font-size: 13px;
+	/* margin: 5px 0 0 5px; */
+	margin: 2px 0 2px 5px;
+}
+
+/**
+ * Style on read-only inputText of data table.
+ */
+input.XWDFTgridFieldReadOnly
+{
+	background-color: transparent;
+	border: none;
+}
+
+/**
+ * Style on label.
+ */
+label
+{
+	color: #214D79;
+	float: left;
+	font-size: 13px;
+	font-weight: bold;
+	height: 20px;
+	margin: 5px 0 0 5px;
+	padding: 2px 0 0 0;
+}
+
+/**
+ * Style on select.
+ */
+select
+{
+	border: 1px solid #CCCCCC;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+	height: 23px;
+	margin: 2px 0 0 5px;
+	padding: 1px 0 0 0;
+}
+
+/**
+ * Style for the select fields on error.
+ */
+select.XWDFTerrorField
+{
+	background-color: #f08080;
+	font-size: 10px;
+	height: 18px;
+}
+
+/**
+ * Style on check-box.
+ */
+input.CheckBoxTransparent
+{
+	background-color: transparent;
+	border: none;
+	height: 15px;
+	width: 15px;
+}
+
+/**
+ * Style for the grid table.
+ */
+table.XWDFTgrid
+{
+	border-spacing: 0;
+	font-size: inherit;
+	margin: 0px;
+}
+
+/**
+ * Style on table of commandButton.
+ */
+table.XWDFTrecordStatus
+{
+	margin: 5px 0 0 0;
+}
+
+/**
+ * Style on textarea.
+ */
+textarea
+{
+	border: 1px solid #CCCCCC;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+	float: left;
+	font-family: helvetica;
+	font-size: 13px;
+	margin: 2px 0 0 5px;
+	padding: 2px 0 0 2px;
+	resize: none;
+}
+
+/**
+ * Style for the odd number of grid rows.
+ */
+tr.XWDFTgridData
+{
+	background-color: #EEF7FE;
+	border-top: 1px solid #7F7F7F;
+}
+
+/**
+ * Style for the cells of grid table.
+ */
+tr.XWDFTgridData td, tr.XWDFTgridAltData td
+{
+	border-right: 1px solid #D3D3D3;
+	/* vertical-align: top; */
+}
+
+/**
+ * Style for the even number of grid rows.
+ */
+tr.XWDFTgridAltData
+{
+	background-color: #D0E7FC;
+	border-top: 1px solid #7F7F7F;
+}
+
+/**
+ * Style for the columns of dataTable.
+ */
+td.XWDFTrightBottomBorder
+{
+	padding: 0 3px 0 3px;
+	/* vertical-align: bottom !important; */
+}
+
+/**
+ * Style on cell of commandButton.
+ */
+td.XWDFTrecordStatus, div.XWDFTrecordStatus
+{
+	font-size: 11px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+/* ---------------- CLASS STYLES -------------- */
+
+/**
+ * Style for disabled buttons.
+ */
+.buttons[disabled]
+{
+	border-color: white;
+	color: #F8F8FF;
+}
+
+/**
+ * CSS for check boxes on grid
+ */
+.chkBox
+{
+	width: 15px;
+	height: 15px;
+	box-shadow: 0 0 0 transparent;
+	margin: 2px 3px;
+}
+
+/**
+ * Style for the container of client area in Flat.
+ */
+.clientArea
+{
+	border: 2px solid #445EA9;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px 0 0 10px;
+	width: 98%;
+}
+
+/**
+ * Style for the container of client area in Grid.
+ */
+.clientAreaGrid
+{
+	margin: 0px 0 0 5px;
+	width: 99%;
+}
+
+/**
+ * To show java scripts validation errors.
+ */
+.clientMessages
+{
+	padding: 0 0 0 10px;
+}
+
+/** 
+ * columns holder
+ */
+.columns-holder
+{
+	overflow: hidden;
+	width: 100%;
+	float: left;
+}
+
+/**
+ * Style for fields which have labels.
+ */
+.constantField
+{
+	border: none;
+	color: #214D79;
+	float: left;
+	font-size: 13px;
+	font-weight: bold;
+	height: 20px;
+	margin: 5px 0 0 5px;
+}
+
+/**
+ * Style for the dependent grid container iFrame.
+ */
+.depGridIFrame
+{
+	width: 100%;
+	margin:  0 0 5px;
+}
+
+/**
+ * Style for the container of flat screen.
+ */
+.flatContainer
+{
+	display: block;
+	overflow: visible;
+	padding: 0 0 0 5px;
+}
+
+/**
+ * DIfferent Style for Label's inside the flatContainer(row,left/right div)
+ */
+.flatContainer label
+{
+	border-bottom: 1px dotted #CCCCCC;
+	height: 16px;
+	margin: 8px 0 0 5px;
+	text-align: right;
+	white-space: nowrap;
+	width: 195px;
+}
+
+/**
+ * DIfferent Style for Label's inside the flatContainerRetainFlatFormat(row,left/right div)
+ */
+.flatContainerRetainFlatFormat label
+{
+	border-bottom: 1px dotted #CCCCCC;
+	height: 16px;
+	margin: 8px 0 0 5px;
+	text-align: right;
+	white-space: nowrap;
+	width: auto;
+}
+
+/**
+ * Style for Function keys text, When needed open commented line
+ */
+.fnKeyTxtClr
+{
+	/* color: #008938 !important ; */
+}
+
+/**
+ * Style for GroupHeader
+ */
+.groupHeaderText
+{
+	border: none;
+	color: #FFFFFF;
+	font-size: 16px;
+	margin: 4px 0 0 6px;
+	vertical-align: middle;
+}
+
+/**
+ * Style for GroupHeader
+ */
+.groupHeaderTextRight
+{
+	border: none;
+	color: #FFFFFF;
+	font-size: 16px;
+	margin: 4px 8px 0 0;
+	vertical-align: middle;
+	float:right;
+}
+
+/**
+ * Style for the grid table header.
+ */
+.gridTableHeader
+{
+	background-color: #7CBCFA;
+	border-color: #FFFFFF #D3D3D3 #FFFFFF #FFFFFF;
+	border-style: none solid none none;
+	border-width: medium 1px medium medium;
+	height: 25px;
+	margin: 0px;
+	padding: 1px 1px 1px 2px;
+	/* vertical-align: top; */
+}
+
+/**
+ * Style for the text of grid table header.
+ */
+.gridTableHeader-Text
+{
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+/**
+ * Style for the title bar of flat and grid screen.
+ */
+.groupHeader
+{
+	background-color: #4684DB;
+	border-radius: 8px 8px 0px 0px;
+	display: block;
+	height: 30px;
+	margin: 0;
+}
+
+/**
+ * Style for the column of asp: GridView for hiding.
+ * Makes the data for that column to be rendered on the page but not visible to
+ * user.
+ */
+.hidden
+{
+	display: none;
+}
+
+/**
+ * inner page
+ */
+.inner
+{
+	background: url("../../../Content/themes/base/images/header.gif") repeat-x scroll 0 0 #F5F5F5;
+	min-width: 980px;
+}
+
+/**
+ * Style for the pager link container in grid.
+ */
+.pageLinks
+{
+	margin: 0;
+	white-space: nowrap;
+}
+
+/**
+ * Style for "page-width" div
+ */
+.page-width
+{
+	width: 100%;
+	margin: 0 auto;
+}
+
+/**
+ * Style for 1st stand alone constants of row which have length more than 49
+ */
+.longStandAloneLabels
+{
+	border-bottom: 0 none !important;
+	width: auto !important;
+	/* margin: 6px 0 0 10px !important; */
+}
+
+/**
+ * Style applied on all Stand alone constant except 1st one of row
+ */
+.normalStandAloneLabels
+{
+	border-bottom: 0 none !important;
+	width: auto !important;
+	padding-left: 5px !important;
+	/* margin: 6px 0 0 !important; */
+}
+
+/**
+ * Style for Div above the pagelinks div
+ */
+.pageLinksContainer
+{
+	width: 100%;
+	height: 20px;
+	margin: 5px 0 0 2px;
+}
+
+/**
+ * style for read only text field on flat screen
+ */
+.flatContainer input.ReadOnly, .flatContainerRetainFlatFormat input.ReadOnly
+{
+	background-color: #F1F1F1;
+}
+
+/**
+ * Style for the visible area of grid and flat screen.
+ */
+.XWDFT, .flatScreenContainer
+{
+	overflow: auto;
+	width: 100%;
+}
+
+/**
+ * Style for the container of grid screen.
+ */
+.XWDFTgridContainer
+{
+	height: auto !important;
+	margin: 0 0 0 2px;
+}
+
+/**
+ * Style for the error type message.
+ */
+.XWDFTerrorFont, .dateErrorFont
+{
+	background-color: #F9F9B6;
+	border: 1px solid #40505D;
+	color: #FF0000;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+}
+
+/* ---------------- ID STYLES -------------- */
+
+/**
+ * Style for the placing of header and logo graphic.
+ */
+#companysite
+{
+	margin: -2px 0 0 45px;
+	background-image: url(../../../Content/themes/base/images/companyLogo.png);
+	background-repeat: no-repeat;
+	display: block;
+	height: 40px;
+	width: 40px;
+}
+
+/**
+ * Style for the visible area of grid screen.
+ */
+#gridContainer table
+{
+	margin: 2px 0 0 0px;
+	width: 100%;
+}
+
+/** 
+ * header
+ */
+#header
+{
+	z-index: 2;
+}
+
+/**
+ * Used on login page, for div in login form
+ */
+#login div, #screenParams div
+{
+	height: 25px;
+	margin: 2px 0 7px 0;
+}
+
+/**
+ * CSS used for loading image Div
+ */
+#loadingDiv
+{
+	position: absolute;
+	z-index: 5;
+	height: 100%;
+	width: 100%;
+	background-color: ghostwhite;
+	opacity: 0.1;
+	filter: alpha(opacity:10);
+}
+
+/** CSS for LoadingImage
+ *
+ */
+#loadingImage
+{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	display: none;
+	z-index: 5;
+}
+
+/**
+ * Style on messagePanel, use to show errors.
+ */
+#messagePanel
+{
+	background-color: #F9F9B6;
+	color: #FF0000;
+	padding-left: 5px;
+}
+
+/**
+ * Style for table to shw errors.
+ */
+#messagePanel table.XWDFTrecordStatus
+{
+	margin: 0px;
+}
+
+/**
+ * Style for td to shw errors.
+ */
+#messagePanel td
+{
+	padding: 0 0 0 10px;
+	height: 20px;
+}
+
+/**
+ * Style for next page link.
+ */
+#nextPage
+{
+	background: url("../../../Content/themes/base/images/next.gif") repeat-x scroll 0px 0 transparent;
+	cursor: pointer;
+	height: 20px;
+	width: 24px;
+	float: right;
+}
+
+/**
+ * Style for the header outer table of layout page.
+ */
+#outer
+{
+	margin: 9px 0 0 0;
+	float: left;
+	width: 100%;
+}
+
+/**
+ * Style for the header container of layout page.
+ */
+#outer div
+{
+	float: left;
+	width: 25%;
+	color: #FFFFFF;
+}
+
+/**
+ * Style for next page link.
+ */
+#previousPage
+{
+	background: url("../../../Content/themes/base/images/previous.gif") repeat-x scroll 0px 0 transparent;
+	cursor: pointer;
+	height: 20px;
+	width: 24px;
+	float: right;
+}
+
+/**
+ * Style for the Flat screen's main table.
+ */
+#updt
+{
+	display: block;
+	position: relative;
+}
+#updt2
+{
+	display: block;
+	position: relative;
+}
+/**
+ * Styles used only for Login, Application and ScreenParams xhtml pages
+ */
+ 
+ /**
+ * Styles for div containing login form on login.xhtml
+ */
+.loginFormContainer
+{
+	margin: 50px auto !important;
+	width: 345px !important;
+}
+
+/**
+ * style to left align
+ */
+.leftAlign
+{
+	float: left !important;
+}
+
+/**
+ * style to right align
+ */
+.rightAlign
+{
+	float: right !important;
+}
+
+/**
+ * Style for submit button on login.xhtml page
+ */
+.submit_loginPage
+{
+	margin: 2px 0 0 0 !important;
+}
+
+/**
+ * Style for message panel on login xhtml pages
+ */
+.messagePanel_loginPage
+{
+	height: auto !important;
+	margin: 0 0 7px 0 !important;
+}
+
+/**
+ * Style for companyLogo link in header div
+ */
+.companysiteLinkContainer
+{
+	margin: -9px 0 0 0 !important;
+}
+
+/**
+ * Style for logout in header div of application.xhtml
+ */
+.logout
+{
+	color: #FFFFFF !important;
+	margin: 0 10px 0 0 !important;
+	float: right !important;
+}
+
+/**
+ * Style for IFRAME contentFrameId on Application.xhtml
+ */
+#contentFrameId
+{
+	width: 100% !important;
+}
+
+/**
+ * Style on Welcome note of screenParams.xhtml
+ */
+.welcomeNote_screenParams
+{
+	margin: 25px 0 !important;
+}
+
+/**
+ * Style on Uppermost div on ScreenParams.xhtml
+ */
+.screenParamsContainer
+{
+	margin: 50px auto !important;
+	width: 365px !important;
+}
+
+/**
+ * Style on message panel of screenParams.xhtml
+ */
+.messagePanel_screenParamsPage
+{
+	height: 30px !important;
+	margin: 0 0 7px 0 !important;
+}
+
+/**
+ * Style on Navigate Button of screenParams.xhtml
+ */
+.navigate_screenParams
+{
+	margin: 2px 0 0 0 !important;
+}
+
+/**
+ * Style on 2nd and 3rd rows elements inside grid panel
+ */
+#gridContainer table table tr td
+{
+	border-right: none;
+}
+
+/**
+ * In multiline grid, extra style for Grid headers 
+ */
+.multilineGridHeader
+{
+	vertical-align: top;
+}
+
+/**
+ * Style for innerDiv to open Prompt.
+ */
+#innerDiv {
+	left: 200px;
+	position: absolute;
+	top: 190px;
+	z-index: 4;
+}
+
+/**
+ * Style for outerDiv.
+ */
+#outerDiv {
+	background-color: #909090;
+	height: 100%;
+	opacity: 0.5;
+	filter: alpha(opacity:50);
+	position: absolute;
+	width: 100%;
+	z-index: 3;
+	display: none;
+}
+/**
+ * Style on Search Button of _layout View 
+ * Added By:- Mohsin Akhtar
+ */
+#xwbccd_ktn.buttons
+ {
+	position: absolute;top: 117px;left: 300px;
+ }
+ 
+ #ExternalDiv
+{
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    position: absolute;
+    margin: 0px;
+    background-color: #000;
+    opacity: 0.0;
+    filter: alpha(opacity:0);
+    z-index: 602;
+    display: none;
+}
+ 
+ /*Style for the Loading Gif(change height, width and background-size from 50 to 32px*/
+ 
+#InternalDiv
+{
+	display: none;
+	position: fixed;
+	z-index:2001;
+	top: 50%;
+	left: 50%;/**/
+	margin-top: 0px;
+	margin-left: 0px;
+	background: url(../../../Content/themes/base/images/loadingBar.gif);
+	height:32px;
+	width:32px;
+	background-size:32px 32px;
+	background-repeat: no-repeat;
+}
+
+/*Style for drop down image shown at the panel */
+.dropDownImgCUSGRP {
+    height: 29px;
+    left: 240px;
+    position: relative;
+    top: 241px;
+    cursor: pointer;
+}
+.dropDownImgSLMEN {
+    height: 29px;
+    left: 211px;
+    position: relative;
+    top: 271px;
+    cursor: pointer;
+}
+.dropDownImgDISTS {
+    height: 29px;
+    left: 181px;
+    position: relative;
+    top: 301px;
+    cursor: pointer;
+}
+
+.filter
+{
+    box-shadow: 0 0 0 transparent;
+    height: 20px;
+    margin: 2px 3px 0;
+    width: 20px;
+    z-index:2000;
+    cursor: pointer;
+}
+.customer_groups_popup
+{
+    margin: 0px auto;
+    width: 300px;
+    top: 346px;
+    left: 219px;
+    -moz-opacity: 1.0;        
+    opacity: 1.0; 
+    filter: alpha(opacity:100);
+    z-index: 1202;
+    position: absolute;
+    z-index: 602;
+    display: none;
+}
+.salesperson_popup
+{
+    margin: 0px auto;
+    width: 300px;
+    top: 376px;
+    left: 219px;
+    -moz-opacity: 1.0;        
+    opacity: 1.0; 
+    filter: alpha(opacity:100);
+    z-index: 1202;
+    position: absolute;
+    z-index: 602;
+    display: none;
+}
+.distributor_popup
+{
+    margin: 0px auto;
+    width: 300px;
+    top: 406px;
+    left: 219px;
+    -moz-opacity: 1.0;        
+    opacity: 1.0; 
+    filter: alpha(opacity:100);
+    z-index: 1202;
+    position: absolute;
+    z-index: 602;
+    display: none;
+}
+.readonlyinp {
+    background-color: #F1F1F1;
+}
+.input-validation-error {
+background-color: #F9F9B6;
+    border: 1px solid #40505D;
+    color: #FF0000;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+}
+
+/**
+ * Style for the container of client area in Prompt Screen.
+ */
+.clientAreaPrompt
+{
+	background-color: #D0E8F0;
+	border: 2px solid #445EA9;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px 5px 0 5px;
+	display: table;
+}

@@ -1,0 +1,139 @@
+﻿@using AB2EDEMO.Controllers
+@model IEnumerable<AB2EDEMO.Models.Ward>
+@{
+    Layout = null;
+    if (TempData["postBackError"] != null)
+    {
+    <script type="text/javascript">
+        gifUnload();
+            alert("@TempData["postBackError"].ToString()");
+    </script>
+    }
+}
+@{
+    <link href="../Content/themes/base/EditWardEditFileGrid.css" rel="stylesheet" type="text/css">
+    </link>
+    <div class="clientArea">
+        <div id="updt">
+            <input type="hidden" value="updt" name="updt" tabindex="1" />
+            <h1 class="groupHeader">
+                <label class="groupHeaderText">
+                    Wards for Country/Hospital</label>
+            </h1>
+            <div id="messagePanel" style="">
+                <div class="clientMessages">
+                    <div id="errorElement" style="display: none;">
+                        @TempData["errorElement"]
+                    </div>
+                </div>
+                <div id="updt:errMsg">@MvcHtmlString.Create(Html.Encode(TempData["message"])
+    .Replace(Environment.NewLine, "<br />"))
+                </div>
+            </div>
+            <div class="flatContainer">
+                <fieldset class="EditWardEditFileGrid_GroupHeader">
+                    <legend></legend>
+                    <label class="EditWardEditFileGrid_Hospital_Code" id="updtGrid:EditWardEditFileGrid_Hospital_Code">
+                        Hospital Code</label>
+                    <input type="text" readonly="readonly" title="hospital_code" style="" maxlength="6" class="EditWardEditFileGrid_hospital_code" value="@ViewBag.hospitalCode" name="updtGrid:hospital_code" id="updtGrid:hospital_code">
+                    <label class="EditWardEditFileGrid_Hospital_Name" id="updtGrid:EditWardEditFileGrid_Hospital_Name">
+                        Hospital Name</label>
+                    <input type="text" readonly="readonly" title="hospital_name" style="" maxlength="25" class="EditWardEditFileGrid_hospital_name" value="@ViewBag.hospitalName" name="updtGrid:hospital_name" id="updtGrid:hospital_name">
+                </fieldset>
+            </div>
+        </div>
+        <div>
+            <div class="clientAreaGrid">
+                @using (Ajax.BeginForm("Save", "Wards", new AjaxOptions { OnSuccess = "constructor();", OnBegin = "gifLoad()", OnComplete = "gifUnload()", InsertionMode = InsertionMode.Replace, UpdateTargetId = "PageContent" }))
+                {
+            
+            
+                    <div id="gridContainer" class="XWDFTgridContainer">
+                        <table id="updtGrid:grid" class="XWDFTgrid" cellspacing="0" cellpadding="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                    </th>
+                                    <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                        <span title="">@Html.DisplayNameFor(model => model.Ward_Code)</span>
+                                    </th>
+                                    <th class="gridTableHeader gridTableHeader-Text" scope="col">
+                                        <span title="">@Html.DisplayNameFor(model => model.Ward_Name)</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+    
+                    var gridRow = 1;
+                    foreach (var item in Model)
+                    {
+                        var className = (gridRow % 2) == 0 ? "XWDFTgridData" : "XWDFTgridAltData";
+                                    <tr class="@className">
+                                        <td class="XWDFTrightBottomBorder" align="center" width="16">
+                                            @{
+                                                if (ViewBag.mode == "ChangeMode")
+                                               {
+                                                   @Html.CheckBox(item.Ward_Code.TrimEnd(), new {id = "updtGrid:grid:2:checked", @class = "chkBox"})
+                                               } }
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.ward_code)*@
+                                            @Html.Hidden("hospital_code", item.Hospital_Code)
+                                            <input id="updtGrid:grid:0:ward_code" class="EditWardEditFileGrid_ward_code XWDFTgridField ReadOnly " onblur="this.value=this.value.toUpperCase()" type="text" readonly="readonly" maxlength="6" value="@item.Ward_Code"  name="ward_code" tabindex="2">
+                                        </td>
+                                        <td>
+                                            @*Html.DisplayFor(itm => item.XWG4TX)*@
+                                            <input id="updtGrid:grid:0:ward_name" class="EditWardEditFileGrid_ward_name XWDFTgridField Editable" type="text" maxlength="25" value="@item.Ward_Name" name="ward_name" tabindex="3">
+                                        </td>
+                                    </tr>
+                        gridRow++;
+                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="buttonPanel">
+                        <input class="buttons" type="submit" value="Submit" name="Submit" /><input type="hidden"
+                            name="Submit" value="SaveWards" />
+                        <input class="buttons" type="submit" value="Change Mode" name="ChangeMode" style="display:none;" /><input
+                            type="hidden" name="ChangeMode" value="ChangeMode" />
+                        <input class="buttons" type="submit" value="Add Mode" name="AddMode" /><input type="hidden"
+                            name="AddMode" value="AddMode" />
+                        <input class="buttons" type="submit" value="Patients per Ward" name="PatientsperWard" /><input
+                            type="hidden" name="PatientsperWard" value="PatientsperWard" />
+                        <input class="buttons" type="submit" value="Delete" name="Delete" /><input type="hidden"
+                            name="Delete" value="DeleteWards" />
+                        <input type="hidden" name="CurrentMode" value="@ViewBag.mode"/>
+                    </div>
+                    <input type="hidden" name="hospitalName" value="@ViewBag.hospitalName"/>
+                    <input type="hidden" name="hospitalCode" value="@ViewBag.hospitalCode"/>
+                    <br />
+                }
+                @using (Ajax.BeginForm("Cancel", "Utils", null, new AjaxOptions { InsertionMode = InsertionMode.Replace, OnBegin = "gifLoad()", OnComplete = "gifUnload()", UpdateTargetId = "PageContent" }, new { style = "Position:absolute;" }))
+                { 
+                    <div id="buttonPanel2">
+                        <input type="submit" value="Cancel" id="Cancel" name="Cancel" class="buttons" />
+                        <input type="hidden" value="Cancel" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function constructor() {
+            if ($("[name='CurrentMode']").val() == "AddMode") {
+                $(".EditWardEditFileGrid_ward_code").removeClass("ReadOnly");
+                $("[name='AddMode']").hide();
+                $("[name='PatientsperWard']").hide();
+                $("[name='Delete']").hide();
+                $("[name='ChangeMode']").show();
+                $(".EditWardEditFileGrid_ward_code").removeAttr("readonly");
+            }
+            if ($("[name='CurrentMode']").val() == "ChangeMode") {
+                $("[name='ChangeMode']").hide();
+            }
+        }
+    </script>
+   
+}

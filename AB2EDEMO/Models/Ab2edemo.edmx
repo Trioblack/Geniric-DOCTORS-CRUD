@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Ab2edemoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Ab2edemoModelStoreContainer">
+          <EntitySet Name="Doctor" EntityType="Ab2edemoModel.Store.Doctor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Hospital" EntityType="Ab2edemoModel.Store.Hospital" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patient" EntityType="Ab2edemoModel.Store.Patient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ward" EntityType="Ab2edemoModel.Store.Ward" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Doctor_Code" />
+          </Key>
+          <Property Name="Doctor_Code" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="Hospital_Code" Type="char" MaxLength="6" />
+          <Property Name="Supervising_Doctor_Doctor" Type="char" MaxLength="6" />
+          <Property Name="Doctor_Name" Type="char" MaxLength="25" />
+          <Property Name="Doctor_Contact_Number" Type="decimal" Precision="15" />
+          <Property Name="Speciality_Level" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="Hospital_Code" />
+          </Key>
+          <Property Name="Hospital_Code" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="Hospital_Name" Type="char" MaxLength="25" />
+          <Property Name="Address_Street" Type="char" MaxLength="25" />
+          <Property Name="Address_Town" Type="char" MaxLength="25" />
+          <Property Name="Address_Province" Type="char" MaxLength="25" />
+          <Property Name="Address_Post_Zip" Type="char" MaxLength="8" />
+          <Property Name="Telephone_Number" Type="decimal" Precision="15" />
+          <Property Name="Fax_Number" Type="decimal" Precision="15" />
+          <Property Name="Country" Type="char" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Patient_Code" />
+          </Key>
+          <Property Name="Patient_Code" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="Hospital_Code" Type="char" MaxLength="6" />
+          <Property Name="Ward_Code" Type="char" MaxLength="6" />
+          <Property Name="Patient_Name" Type="char" MaxLength="25" />
+          <Property Name="Patient_Surname" Type="char" MaxLength="25" />
+          <Property Name="Address_Line_1" Type="char" MaxLength="25" />
+          <Property Name="Address_Line_2" Type="char" MaxLength="25" />
+          <Property Name="Address_Town_City" Type="char" MaxLength="25" />
+          <Property Name="Address_Country" Type="char" MaxLength="25" />
+          <Property Name="Address_Postal_Zip_Code" Type="char" MaxLength="8" />
+          <Property Name="Patient_ID_Number" Type="decimal" Precision="15" />
+          <Property Name="Patient_Date_Of_Birth" Type="decimal" Precision="7" />
+          <Property Name="Patient_Occupation" Type="char" MaxLength="25" />
+          <Property Name="Patient_Contact_Number" Type="decimal" Precision="15" />
+          <Property Name="Patient_Gender" Type="char" MaxLength="1" />
+          <Property Name="Patient_Status" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Ward">
+          <Key>
+            <PropertyRef Name="Hospital_Code" />
+            <PropertyRef Name="Ward_Code" />
+          </Key>
+          <Property Name="Hospital_Code" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="Ward_Code" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="Ward_Name" Type="char" MaxLength="25" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Ab2edemoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Ab2edemoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Doctors" EntityType="Ab2edemoModel.Doctor" />
+          <EntitySet Name="Hospitals" EntityType="Ab2edemoModel.Hospital" />
+          <EntitySet Name="Patients" EntityType="Ab2edemoModel.Patient" />
+          <EntitySet Name="Wards" EntityType="Ab2edemoModel.Ward" />
+        </EntityContainer>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Doctor_Code" />
+          </Key>
+          <Property Name="Doctor_Code" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Hospital_Code" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Supervising_Doctor_Doctor" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Doctor_Name" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Doctor_Contact_Number" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="Speciality_Level" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="Hospital_Code" />
+          </Key>
+          <Property Name="Hospital_Code" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Hospital_Name" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Street" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Town" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Province" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Post_Zip" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="Telephone_Number" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="Fax_Number" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="Country" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Patient_Code" />
+          </Key>
+          <Property Name="Patient_Code" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Hospital_Code" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Ward_Code" Type="String" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Patient_Name" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Patient_Surname" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Line_1" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Line_2" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Town_City" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Country" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Address_Postal_Zip_Code" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="Patient_ID_Number" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="Patient_Date_Of_Birth" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="Patient_Occupation" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+          <Property Name="Patient_Contact_Number" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="Patient_Gender" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Patient_Status" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Ward">
+          <Key>
+            <PropertyRef Name="Hospital_Code" />
+            <PropertyRef Name="Ward_Code" />
+          </Key>
+          <Property Name="Hospital_Code" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Ward_Code" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="Ward_Name" Type="String" MaxLength="25" Unicode="false" FixedLength="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Ab2edemoModelStoreContainer" CdmEntityContainer="Ab2edemoEntities">
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="Ab2edemoModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="Doctor_Code" ColumnName="Doctor_Code" />
+                <ScalarProperty Name="Hospital_Code" ColumnName="Hospital_Code" />
+                <ScalarProperty Name="Supervising_Doctor_Doctor" ColumnName="Supervising_Doctor_Doctor" />
+                <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+                <ScalarProperty Name="Doctor_Contact_Number" ColumnName="Doctor_Contact_Number" />
+                <ScalarProperty Name="Speciality_Level" ColumnName="Speciality_Level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hospitals">
+            <EntityTypeMapping TypeName="Ab2edemoModel.Hospital">
+              <MappingFragment StoreEntitySet="Hospital">
+                <ScalarProperty Name="Hospital_Code" ColumnName="Hospital_Code" />
+                <ScalarProperty Name="Hospital_Name" ColumnName="Hospital_Name" />
+                <ScalarProperty Name="Address_Street" ColumnName="Address_Street" />
+                <ScalarProperty Name="Address_Town" ColumnName="Address_Town" />
+                <ScalarProperty Name="Address_Province" ColumnName="Address_Province" />
+                <ScalarProperty Name="Address_Post_Zip" ColumnName="Address_Post_Zip" />
+                <ScalarProperty Name="Telephone_Number" ColumnName="Telephone_Number" />
+                <ScalarProperty Name="Fax_Number" ColumnName="Fax_Number" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="Ab2edemoModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="Patient_Code" ColumnName="Patient_Code" />
+                <ScalarProperty Name="Hospital_Code" ColumnName="Hospital_Code" />
+                <ScalarProperty Name="Ward_Code" ColumnName="Ward_Code" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+                <ScalarProperty Name="Patient_Surname" ColumnName="Patient_Surname" />
+                <ScalarProperty Name="Address_Line_1" ColumnName="Address_Line_1" />
+                <ScalarProperty Name="Address_Line_2" ColumnName="Address_Line_2" />
+                <ScalarProperty Name="Address_Town_City" ColumnName="Address_Town_City" />
+                <ScalarProperty Name="Address_Country" ColumnName="Address_Country" />
+                <ScalarProperty Name="Address_Postal_Zip_Code" ColumnName="Address_Postal_Zip_Code" />
+                <ScalarProperty Name="Patient_ID_Number" ColumnName="Patient_ID_Number" />
+                <ScalarProperty Name="Patient_Date_Of_Birth" ColumnName="Patient_Date_Of_Birth" />
+                <ScalarProperty Name="Patient_Occupation" ColumnName="Patient_Occupation" />
+                <ScalarProperty Name="Patient_Contact_Number" ColumnName="Patient_Contact_Number" />
+                <ScalarProperty Name="Patient_Gender" ColumnName="Patient_Gender" />
+                <ScalarProperty Name="Patient_Status" ColumnName="Patient_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wards">
+            <EntityTypeMapping TypeName="Ab2edemoModel.Ward">
+              <MappingFragment StoreEntitySet="Ward">
+                <ScalarProperty Name="Hospital_Code" ColumnName="Hospital_Code" />
+                <ScalarProperty Name="Ward_Code" ColumnName="Ward_Code" />
+                <ScalarProperty Name="Ward_Name" ColumnName="Ward_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Ab2edemo">
+        <EntityTypeShape EntityType="Ab2edemoModel.Doctor" Width="1.5" PointX="0.75" PointY="0.75" Height="2.172587890625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ab2edemoModel.Hospital" Width="1.5" PointX="2.75" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ab2edemoModel.Patient" Width="1.5" PointX="4.75" PointY="0.75" Height="4.0956022135416656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ab2edemoModel.Ward" Width="1.5" PointX="0.75" PointY="4.75" Height="1.5956835937499996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
